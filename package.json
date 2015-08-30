@@ -1,0 +1,28 @@
+{
+  "name": "diffsync-example",
+  "version": "0.0.1",
+  "description": "Collaborate on a JSON object using diffsync",
+  "scripts": {
+    "start": "./node_modules/.bin/coffee app/server.coffee"
+  },
+  "author": "Winton Welsh <winton@inverse.com>",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "envify"
+    ]
+  },
+  "dependencies": {
+    "browserify": "",
+    "coffee-script": "",
+    "coffeeify": "",
+    "diffsync": "",
+    "envify": "",
+    "express": "",
+    "gulp": "",
+    "gulp-run": "",
+    "socket.io": "",
+    "socket.io-client": ""
+  }
+}
