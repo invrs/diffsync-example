@@ -7,6 +7,11 @@ Collaborate on a JSON object using diffsync.
     git clone git@github.com:invrs/diffsync-example.git
     cd diffsync-example
     npm install
+	npm install -g gulp
+
+## Build client.js
+
+    gulp
 
 ## Start server
 
