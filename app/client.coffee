@@ -1,6 +1,6 @@
 DiffSync = require 'diffsync'
-socket   = require 'socket.io-client'
-client   = new DiffSync.Client(socket(), 'test')
+socket   = require('socket.io-client')()
+client   = new DiffSync.Client(socket, 'test')
 data     = undefined
 
 document.addEventListener 'DOMContentLoaded', (event) ->
@@ -19,14 +19,17 @@ document.addEventListener 'DOMContentLoaded', (event) ->
         data[key] = new_data[key]
       client.sync()
     catch e
-      console.log e
+      console.log 'invalid json'
   
   client.on 'connected', ->
-    console.log 'connected'
+    console.log 'client connected'
     update()
+
+  socket.on 'log', (data) ->
+    console.log data
   
   client.on 'synced', ->
-    console.log 'synced'
+    console.log 'client synced'
     update()
   
   client.initialize()
